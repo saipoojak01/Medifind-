@@ -19,7 +19,8 @@ Get directions directly to that pharmacy
 
 
 🛠️ Tech Stack
-LayerTechnologyBackendJava 21 + Spring Boot 3.4FrontendReact.js + Tailwind CSSDatabaseMySQLOCRTesseract Java LibraryMapsLeaflet.js + OpenStreetMapAuthSpring Security + JWT
+
+LayerTechnology BackendJava 21 + Spring Boot 3.4FrontendReact.js + Tailwind CSSDatabaseMySQLOCRTesseract Java LibraryMapsLeaflet.js + OpenStreetMapAuthSpring Security + JWT
 
 ✨ Features
 
