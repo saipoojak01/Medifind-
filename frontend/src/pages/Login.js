@@ -30,25 +30,14 @@ function Login() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#070b16] relative overflow-hidden px-4">
-
-      {/* Background glow effects */}
-      <div className="absolute w-[600px] h-[600px] bg-teal-500/5 rounded-full -top-40 -right-40 blur-3xl"></div>
-      <div className="absolute w-[500px] h-[500px] bg-blue-500/5 rounded-full -bottom-32 -left-32 blur-3xl"></div>
-
+      <div className="absolute w-96 h-96 bg-teal-500/5 rounded-full -top-40 -right-40 blur-3xl"></div>
+      <div className="absolute w-80 h-80 bg-blue-500/5 rounded-full -bottom-32 -left-32 blur-3xl"></div>
       <div className="relative z-10 bg-[#0f1729]/80 backdrop-blur-xl border border-teal-500/10 rounded-2xl shadow-2xl p-8 w-full max-w-md">
-
-        {/* Logo */}
         <div className="flex flex-col items-center mb-6">
           <div className="flex items-center justify-center gap-4 mb-4">
             <h1 className="text-4xl font-extrabold text-white">Medifind</h1>
             <div className="h-10 w-px bg-slate-600"></div>
-            <svg
-              className="w-12 h-12 text-teal-400"
-              viewBox="0 0 100 100"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              style={{ filter: 'drop-shadow(0 0 8px rgba(45,212,191,0.6))' }}
-            >
+            <svg className="w-12 h-12 text-teal-400" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0 0 8px rgba(45,212,191,0.6))' }}>
               <path d="M35 5 H65 V35 H95 V65 H65 V95 H35 V65 H5 V35 H35 Z" stroke="currentColor" strokeWidth="6" strokeLinejoin="round"/>
               <circle cx="68" cy="68" r="17" stroke="currentColor" strokeWidth="6" fill="#0f1729"/>
               <line x1="79" y1="79" x2="92" y2="92" stroke="currentColor" strokeWidth="6" strokeLinecap="round"/>
@@ -65,12 +54,10 @@ function Login() {
         )}
 
         <form onSubmit={handleLogin} className="space-y-4">
-
-          {/* Email */}
           <div>
             <label className="text-sm text-slate-200 font-medium mb-2 block">Email Address</label>
             <div className="flex items-center bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-3 focus-within:border-teal-400 transition">
-              <Mail size={18} className="text-slate-500 mr-2.5" />
+              <Mail size={18} className="text-slate-500 mr-2" />
               <input
                 type="email"
                 value={email}
@@ -82,14 +69,18 @@ function Login() {
             </div>
           </div>
 
-          {/* Password */}
           <div>
             <div className="flex justify-between items-center mb-2">
               <label className="text-sm text-slate-200 font-medium">Password</label>
-              <span className="text-xs text-teal-400 cursor-pointer">Forgot Password?</span>
+              <span
+                className="text-xs text-teal-400 cursor-pointer hover:text-teal-300 transition"
+                onClick={() => navigate('/forgot-password')}
+              >
+                Forgot Password?
+              </span>
             </div>
             <div className="flex items-center bg-slate-800/60 border border-slate-700 rounded-lg px-3 py-3 focus-within:border-teal-400 transition">
-              <Lock size={18} className="text-slate-500 mr-2.5" />
+              <Lock size={18} className="text-slate-500 mr-2" />
               <input
                 type={showPassword ? 'text' : 'password'}
                 value={password}
@@ -116,9 +107,7 @@ function Login() {
 
         <p className="text-center text-sm text-slate-400 mt-6">
           Don't have an account?{' '}
-          <Link to="/register" className="text-teal-400 font-medium">
-            Sign Up
-          </Link>
+          <Link to="/register" className="text-teal-400 font-medium">Sign Up</Link>
         </p>
       </div>
     </div>
