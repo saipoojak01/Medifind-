@@ -7,6 +7,9 @@ import SearchPage from './pages/Search';
 import UploadPage from './pages/Upload';
 import Results from './pages/Results';
 import ForgotPassword from './pages/ForgotPassword';
+import PharmacyLogin from './pages/PharmacyLogin';
+import PharmacyRegister from './pages/PharmacyRegister';
+import PharmacyDashboard from './pages/PharmacyDashboard';
 
 function App() {
   return (
@@ -18,6 +21,9 @@ function App() {
       <Route path="/upload" element={<UploadPage />} />
       <Route path="/results" element={<Results />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/pharmacy/login" element={<PharmacyLogin />} />
+      <Route path="/pharmacy/register" element={<PharmacyRegister />} />
+      <Route path="/pharmacy/dashboard" element={<PharmacyDashboard />} />
     </Routes>
   );
 }
