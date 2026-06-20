@@ -13,30 +13,41 @@ function Home() {
     { icon: <ShieldCheck size={28} />, title: '100% Reliable', desc: 'Genuine medicines you can trust' },
   ];
 
+  const MediLogo = () => (
+    <svg className="w-8 h-8 text-teal-400" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0 0 6px rgba(45,212,191,0.6))' }}>
+      <path d="M35 5 H65 V35 H95 V65 H65 V95 H35 V65 H5 V35 H35 Z" stroke="currentColor" strokeWidth="6" strokeLinejoin="round"/>
+      <circle cx="68" cy="68" r="17" stroke="currentColor" strokeWidth="6" fill="#070b16"/>
+      <line x1="79" y1="79" x2="92" y2="92" stroke="currentColor" strokeWidth="6" strokeLinecap="round"/>
+    </svg>
+  );
+
   return (
     <div className="min-h-screen bg-[#070b16] relative overflow-hidden">
 
-      {/* Background glows */}
-      <div className="absolute w-[600px] h-[600px] bg-teal-500/5 rounded-full -top-40 right-0 blur-3xl"></div>
-      <div className="absolute w-[400px] h-[400px] bg-blue-500/5 rounded-full bottom-0 left-0 blur-3xl"></div>
+      <div className="absolute w-96 h-96 bg-teal-500/5 rounded-full -top-40 right-0 blur-3xl"></div>
+      <div className="absolute w-80 h-80 bg-blue-500/5 rounded-full bottom-0 left-0 blur-3xl"></div>
 
       {/* Navbar */}
       <nav className="relative z-10 flex items-center justify-between px-8 py-4 border-b border-slate-800">
         <div className="flex items-center gap-3">
-          <svg className="w-8 h-8 text-teal-400" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0 0 6px rgba(45,212,191,0.6))' }}>
-            <path d="M35 5 H65 V35 H95 V65 H65 V95 H35 V65 H5 V35 H35 Z" stroke="currentColor" strokeWidth="6" strokeLinejoin="round"/>
-            <circle cx="68" cy="68" r="17" stroke="currentColor" strokeWidth="6" fill="#070b16"/>
-            <line x1="79" y1="79" x2="92" y2="92" stroke="currentColor" strokeWidth="6" strokeLinecap="round"/>
-          </svg>
+          <MediLogo />
           <span className="text-xl font-extrabold text-white">Medifind</span>
         </div>
-        <div className="flex items-center gap-6">
-          <span className="text-slate-300 text-sm hidden md:block">Welcome, <span className="text-teal-400 font-medium">{name || 'User'}</span></span>
+        <div className="flex items-center gap-3">
+          <span className="text-slate-300 text-sm hidden md:block">
+            Welcome, <span className="text-teal-400 font-medium">{name || 'User'}</span>
+          </span>
           <button
             onClick={() => navigate('/search')}
             className="bg-gradient-to-r from-teal-400 to-emerald-500 text-[#070b16] font-semibold px-4 py-2 rounded-lg text-sm hover:opacity-90 transition"
           >
             Find Medicines
+          </button>
+          <button
+            onClick={() => navigate('/pharmacy/login')}
+            className="text-slate-400 text-xs hover:text-teal-400 transition border border-slate-700 px-3 py-1.5 rounded-lg hover:border-teal-400/30"
+          >
+            Pharmacy Login
           </button>
           <button
             onClick={() => { localStorage.clear(); navigate('/'); }}
@@ -57,7 +68,7 @@ function Home() {
           <p className="text-slate-400 text-lg mb-8 leading-relaxed">
             MediFind helps you find medicines nearby, compare prices and check availability instantly.
           </p>
-          <div className="flex gap-4">
+          <div className="flex gap-4 flex-wrap">
             <button
               onClick={() => navigate('/search')}
               className="flex items-center gap-2 bg-gradient-to-r from-teal-400 to-emerald-500 text-[#070b16] font-semibold px-6 py-3 rounded-lg hover:opacity-90 transition"
