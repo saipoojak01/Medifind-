@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Search, Plus, X, Upload, ArrowRight, AlertCircle } from 'lucide-react';
-import api from '../utils/api';
+
 
 function SearchPage() {
   const [medicines, setMedicines] = useState([]);
   const [input, setInput] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [loading] = useState(false);
   const [error, setError] = useState('');
   const [agreed, setAgreed] = useState(false);
   const navigate = useNavigate();

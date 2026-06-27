@@ -44,7 +44,8 @@ function Results() {
   useEffect(() => {
     if (medicines.length === 0) { navigate('/search'); return; }
     getUserLocation();
-  }, []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [navigate]);
 
   const getUserLocation = () => {
     if (navigator.geolocation) {

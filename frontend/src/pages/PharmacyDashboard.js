@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Plus, Package, Edit, Trash2, LogOut, X, Check } from 'lucide-react';
+import { Plus, Package, Edit, LogOut, X, Check } from 'lucide-react';
 import api from '../utils/api';
 
 function PharmacyDashboard() {
@@ -16,7 +16,6 @@ function PharmacyDashboard() {
   });
   const navigate = useNavigate();
   const shopName = localStorage.getItem('shopName');
-  const pharmacyId = localStorage.getItem('pharmacyId');
 
   useEffect(() => {
     if (!localStorage.getItem('pharmacyToken')) {
@@ -24,7 +23,8 @@ function PharmacyDashboard() {
       return;
     }
     fetchMedicines();
-  }, []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [navigate]);
 
   const fetchMedicines = async () => {
     setLoading(true);
