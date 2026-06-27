@@ -20,6 +20,7 @@ function PharmacyLogin() {
       localStorage.setItem('pharmacyToken', response.data.token);
       localStorage.setItem('shopName', response.data.shopName);
       localStorage.setItem('role', response.data.role);
+      localStorage.setItem('pharmacyId', response.data.pharmacyId);
       navigate('/pharmacy/dashboard');
     } catch (err) {
       setError(err.response?.data || 'Login failed. Please try again.');
@@ -27,7 +28,6 @@ function PharmacyLogin() {
       setLoading(false);
     }
   };
-
   const MediLogo = () => (
     <svg className="w-10 h-10 text-teal-400" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0 0 8px rgba(45,212,191,0.6))' }}>
       <path d="M35 5 H65 V35 H95 V65 H65 V95 H35 V65 H5 V35 H35 Z" stroke="currentColor" strokeWidth="6" strokeLinejoin="round"/>
